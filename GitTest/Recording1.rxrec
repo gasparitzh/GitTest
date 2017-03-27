@@ -37,6 +37,19 @@ mode="Global">
 			<comment/>
 			<bindings/>
 		</loggingrecorditem>
+		<userrecorditem
+		enabled="True"
+		optional="False"
+		namespace="GitTest"
+		classname="UserCodeCollectionTest"
+		methodname="CustomLogging"
+		isexternaltestmethod="True"
+		varname="">
+			<comment/>
+			<bindings/>
+			<arguments
+			id="7f5d5021-ac7f-4f0b-9021-8dc2b3659a9f"/>
+		</userrecorditem>
 	</recorditems>
 	<repository
 	name="GitTestRepository"
