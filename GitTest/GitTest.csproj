@@ -83,13 +83,16 @@
       <BoundTo>7b8b860d-fb45-43bd-be05-f3feaa896b6d</BoundTo>
       <DependentUpon>Recording1.rxrec</DependentUpon>
       <RecorderCode>true</RecorderCode>
-      <id>3ee739f3-9b4c-4188-86d1-4975c62a4603</id>
+      <id>dbe0b206-d686-4b41-9c59-8c3e190dfa45</id>
     </Compile>
     <Compile Include="Recording1.UserCode.cs">
       <BoundTo>7b8b860d-fb45-43bd-be05-f3feaa896b6d</BoundTo>
       <DependentUpon>Recording1.rxrec</DependentUpon>
       <UserCode>true</UserCode>
       <id>83ef1729-e4e6-4f5c-b585-767b595b7a63</id>
+    </Compile>
+    <Compile Include="UserCodeCollectionTest.cs">
+      <id>dc9234ea-8699-49d3-b1c1-c7f516ab2aff</id>
     </Compile>
   </ItemGroup>
   <ItemGroup>
