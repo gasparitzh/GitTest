@@ -26,7 +26,18 @@ mode="Global">
 	classname="Recording1"
 	namespace="GitTest"/>
 	<variables/>
-	<recorditems/>
+	<recorditems>
+		<loggingrecorditem
+		enabled="True"
+		optional="False"
+		searchpropertyid="587a4526-8dac-4bd3-bed0-5a0f22ef6680"
+		category="User"
+		message="asdfadf"
+		reportlevel="Info;20">
+			<comment/>
+			<bindings/>
+		</loggingrecorditem>
+	</recorditems>
 	<repository
 	name="GitTestRepository"
 	id="5195b368-8f54-4bb1-87d7-ff983ee59da2"

@@ -79,6 +79,8 @@ namespace GitTest
 
             Init();
 
+            Report.Log(ReportLevel.Info, "User", "asdfadf", new RecordItemIndex(0));
+            
         }
 
 #region Image Feature Data
