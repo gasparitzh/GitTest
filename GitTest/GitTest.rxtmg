@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <modulegroupdoc
-rxversion="6.2">
-  <testsuiteentryhierarchy>
-    <flatlistofchildren>
-      <modulegroups
-      name="GitTest"
-      id="0e3b616e-92fc-4dd9-be75-88dba638309c"/>
-    </flatlistofchildren>
-    <childhierarchy>
-      <modulegroups
-      name="GitTest"
-      id="0e3b616e-92fc-4dd9-be75-88dba638309c"/>
-    </childhierarchy>
-  </testsuiteentryhierarchy>
+rxversion="8.2">
+	<testsuiteentryhierarchy>
+		<flatlistofchildren>
+			<modulegroups
+			id="0e3b616e-92fc-4dd9-be75-88dba638309c"
+			name="GitTest">
+			</modulegroups>
+		</flatlistofchildren>
+		<childhierarchy>
+			<modulegroups
+			id="0e3b616e-92fc-4dd9-be75-88dba638309c"
+			name="GitTest">
+			</modulegroups>
+		</childhierarchy>
+	</testsuiteentryhierarchy>
 </modulegroupdoc>

@@ -1,11 +1,14 @@
 ﻿<configuration
-rxversion="6.2">
+rxversion="8.2">
 	<adapter.defaultsearchtimeout>
 		10000ms
 	</adapter.defaultsearchtimeout>
 	<adapter.defaultuseensurevisible>
 		True
 	</adapter.defaultuseensurevisible>
+	<adapter.functionexecutiontimeout>
+		5000ms
+	</adapter.functionexecutiontimeout>
 	<imaging.defaultfindoptions>
 		1;None;0,0,0,0;True;10000000;0ms
 	</imaging.defaultfindoptions>
@@ -27,6 +30,9 @@ rxversion="6.2">
 	<recorder.UseConfiguredTimingsOnRecord>
 		True
 	</recorder.UseConfiguredTimingsOnRecord>
+	<recorder.usekeystrokeoptimizationkey>
+		True
+	</recorder.usekeystrokeoptimizationkey>
 	<recorder.mousemovetime>
 		300ms
 	</recorder.mousemovetime>
@@ -63,420 +69,456 @@ rxversion="6.2">
 	<rxpath.weights>
 		<rxpathweights>
 			<rule
-			name="EON Rule 2"
-			enabled="False"
-			capability="formtag"
 			attribute="action"
-			setweight="0"
-			conditionsoperator="or">
+			capability="formtag"
+			conditionsoperator="or"
+			enabled="False"
+			name="EON Rule 2"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="action"
 				match="^https://q-mein-eon.eon-apps.com"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="EONRule1"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="EONRule1"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="id[0-9a-z]*"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="IconRule"
-			enabled="False"
-			capability="dynamic"
 			attribute="icon"
-			setweight="999"
-			conditionsoperator="or">
+			capability="dynamic"
+			conditionsoperator="or"
+			enabled="False"
+			name="IconRule"
+			setweight="999">
 				<condition
-				source="self"
 				attribute="FullType"
 				match="javax.swing."
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="JDEdwards Disable"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="JDEdwards Disable"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="node[0-9]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="MBAEC-Rule"
-			enabled="True"
-			capability="nativewindow"
 			attribute="class"
-			setweight="0"
-			conditionsoperator="or">
+			capability="nativewindow"
+			conditionsoperator="or"
+			enabled="True"
+			name="MBAEC-Rule"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="class"
 				match="^Afx:"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="MobileText"
-			enabled="False"
-			capability="text"
 			attribute="text"
-			setweight="140"
-			conditionsoperator="or">
+			capability="text"
+			conditionsoperator="or"
+			enabled="False"
+			name="MobileText"
+			setweight="140">
 				<condition
-				source="parent"
 				attribute="ContainerType"
 				match="Relative|Linear"
-				negate="False"/>
+				negate="False"
+				source="parent">
+				</condition>
 			</rule>
 			<rule
-			name="OneLogicRule1"
-			enabled="False"
-			capability="uiautomation"
 			attribute="name"
-			setweight="0"
-			conditionsoperator="or">
+			capability="uiautomation"
+			conditionsoperator="or"
+			enabled="False"
+			name="OneLogicRule1"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="name"
 				match="^Einträge:"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="OneLogicRule2"
-			enabled="False"
-			capability="uiautomationvalue"
 			attribute="uiautomationvaluevalue"
-			setweight="111"
-			conditionsoperator="or">
+			capability="uiautomationvalue"
+			conditionsoperator="or"
+			enabled="False"
+			name="OneLogicRule2"
+			setweight="111">
 				<condition
-				source="parent"
 				attribute="Name"
 				match="^Volkswagen"
-				negate="False"/>
+				negate="False"
+				source="parent">
+				</condition>
 				<condition
-				source="parent"
 				attribute="LocalizedControlType"
 				match="Strukturansichtselement"
-				negate="False"/>
+				negate="False"
+				source="parent">
+				</condition>
 			</rule>
 			<rule
-			name="PivotalCRM Rule 1"
-			enabled="False"
-			capability="control"
 			attribute="controlname"
-			setweight="0"
-			conditionsoperator="or">
+			capability="control"
+			conditionsoperator="or"
+			enabled="False"
+			name="PivotalCRM Rule 1"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="controlname"
 				match="_0(x[0-9A-Z]+)*"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="PivotalCRM Rule 2"
-			enabled="False"
-			capability="uiautomation"
 			attribute="automationid"
-			setweight="0"
-			conditionsoperator="or">
+			capability="uiautomation"
+			conditionsoperator="or"
+			enabled="False"
+			name="PivotalCRM Rule 2"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="automationid"
 				match="_0x[0-9A-Z]+x[0-9A-Z]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RemosManager"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="RemosManager"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="w[0-9]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb ASP.net"
-			enabled="True"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWeb ASP.net"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^ctl00(\$|_)(.*(\$|_))"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb GWT"
-			enabled="True"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWeb GWT"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^gwt-uid-\d+.*"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 				<condition
-				source="self"
 				attribute="id"
 				match="^isc_.+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb JS Frameworks (ExtJS, Sencha, Ozone Widget ,...)"
-			enabled="True"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWeb JS Frameworks (ExtJS, Sencha, Ozone Widget ,...)"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^ext-.*\d+.*"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 				<condition
-				source="self"
 				attribute="id"
 				match="^[a-z]+-\d{4}(-[a-z]*(-\d*)?)?"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb MS Dynamics CRM"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="RxWeb MS Dynamics CRM"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="[a-zA-Z_]+_{([0-9 A-F]+(-)?)+}_\d+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb YUI (Yahoo User Interface Library)"
-			enabled="True"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWeb YUI (Yahoo User Interface Library)"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^yui(_\d+)"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 				<condition
-				source="self"
 				attribute="id"
 				match="^yui-gen.*"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWeb jQuery"
-			enabled="True"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWeb jQuery"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^ui-id-\d+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="RxWin32 Random ControlIds"
-			enabled="True"
-			capability="nativewindow"
 			attribute="controlid"
-			setweight="0"
-			conditionsoperator="or"/>
-			<rule
-			name="RxWinForms ControlNet11 Classnames"
-			enabled="True"
 			capability="nativewindow"
+			conditionsoperator="or"
+			enabled="True"
+			name="RxWin32 Random ControlIds"
+			setweight="0">
+			</rule>
+			<rule
 			attribute="class"
-			setweight="0"
-			conditionsoperator="and">
+			capability="nativewindow"
+			conditionsoperator="and"
+			enabled="True"
+			name="RxWinForms ControlNet11 Classnames"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="class"
 				match="^WindowsForms10.Window"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="SAP Web Rule"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="SAP Web Rule"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^C[0-9]+_W[0-9]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="SAPRule"
-			enabled="False"
-			capability="sapitem"
 			attribute="itemid"
-			setweight="150"
-			conditionsoperator="or"/>
-			<rule
-			name="ServiceNowRule-DisableIDS"
+			capability="sapitem"
+			conditionsoperator="or"
 			enabled="False"
-			capability="webelement"
+			name="SAPRule"
+			setweight="150">
+			</rule>
+			<rule
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="ServiceNowRule-DisableIDS"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^((div|app|module).)?[0-9a-z]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="ServiceNowRule-EnableInnertextWhenLabel"
-			enabled="False"
-			capability="webelement"
 			attribute="innertext"
-			setweight="200"
-			conditionsoperator="or">
+			capability="webelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="ServiceNowRule-EnableInnertextWhenLabel"
+			setweight="200">
 				<condition
-				source="self"
 				attribute="tagname"
 				match="label"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="ServiceNowRule-EnableModuleNameWhenModule"
-			enabled="False"
-			capability="dynamic"
 			attribute="modulename"
-			setweight="200"
-			conditionsoperator="and">
+			capability="dynamic"
+			conditionsoperator="and"
+			enabled="False"
+			name="ServiceNowRule-EnableModuleNameWhenModule"
+			setweight="200">
 				<condition
-				source="self"
 				attribute="id"
 				match="^module."
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="SharePointRule1"
-			enabled="False"
-			capability="webelement"
 			attribute="id"
-			setweight="0"
-			conditionsoperator="or">
-				<condition
-				source="self"
-				attribute="id"
-				match="^DlgFrame"
-				negate="False"/>
-			</rule>
-			<rule
-			name="SharePointRule2"
-			enabled="False"
 			capability="webelement"
-			attribute="tagname"
-			setweight="180"
-			conditionsoperator="or">
+			conditionsoperator="or"
+			enabled="False"
+			name="SharePointRule1"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="id"
 				match="^DlgFrame"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="WPF"
+			attribute="tagname"
+			capability="webelement"
+			conditionsoperator="or"
 			enabled="False"
-			capability="dynamic"
-			attribute="tooltip"
-			setweight="200"
-			conditionsoperator="or">
+			name="SharePointRule2"
+			setweight="180">
 				<condition
-				source="self"
+				attribute="id"
+				match="^DlgFrame"
+				negate="False"
+				source="self">
+				</condition>
+			</rule>
+			<rule
+			attribute="tooltip"
+			capability="dynamic"
+			conditionsoperator="or"
+			enabled="False"
+			name="WPF"
+			setweight="200">
+				<condition
 				attribute="BaseType"
 				match="System.Windows.Controls.Image"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
+			attribute="automationid"
+			capability="wpfelement"
+			conditionsoperator="or"
+			enabled="False"
 			name="WPF Text 1"
-			enabled="False"
-			capability="wpfelement"
-			attribute="automationid"
-			setweight="0"
-			conditionsoperator="or">
+			setweight="0">
 				<condition
-				source="self"
 				attribute="automationid"
 				match="TextTitle"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="WPF Text 2"
-			enabled="False"
-			capability="wpfelement"
 			attribute="name"
-			setweight="0"
-			conditionsoperator="or">
+			capability="wpfelement"
+			conditionsoperator="or"
+			enabled="False"
+			name="WPF Text 2"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="automationid"
 				match="TextTitle"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="WagoRule"
-			enabled="False"
-			capability="uiautomation"
 			attribute="automationid"
-			setweight="0"
-			conditionsoperator="or">
+			capability="uiautomation"
+			conditionsoperator="or"
+			enabled="False"
+			name="WagoRule"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="automationid"
 				match="[A-Za-z]+_[0-9]+"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 				<condition
-				source="self"
 				attribute="automationid"
 				match="^TabbedMdiContainer"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 			<rule
-			name="WpfRemoteRule"
-			enabled="False"
-			capability="tabpage"
 			attribute="title"
-			setweight="0"
-			conditionsoperator="or">
+			capability="tabpage"
+			conditionsoperator="or"
+			enabled="False"
+			name="WpfRemoteRule"
+			setweight="0">
 				<condition
-				source="self"
 				attribute="title"
 				match="WpfRemote&lt;[a-zA-Z]+>{.*}"
-				negate="False"/>
+				negate="False"
+				source="self">
+				</condition>
 			</rule>
 		</rxpathweights>
 	</rxpath.weights>
@@ -485,659 +527,875 @@ rxversion="6.2">
 	</rxpath.enableuidsearch>
 	<rxpath.pathbuildoptions>
 		<pathbuildoptions
-		q="0.5"
+		defcapcost="20"
+		kattr="0.5"
 		kcap="1"
 		ksib="10"
-		kattr="0.5"
-		defcapcost="20">
-			<cap
-			name="unknown"
-			cost="10"/>
-			<cap
-			name="container"
-			cost="20"/>
-			<cap
-			name="cell"
-			cost="10"/>
-			<cap
-			name="text"
-			cost="10"/>
-			<cap
-			name="treeitem"
-			cost="20"/>
-			<cap
-			name="listitem"
-			cost="40"/>
-			<cap
-			name="row"
-			cost="40"/>
-			<cap
-			name="column"
-			cost="40"/>
-			<cap
-			name="button"
-			cost="40"/>
-			<cap
-			name="form"
-			cost="60"/>
-			<cap
-			name="toolbar"
-			cost="60"/>
-			<cap
-			name="list"
-			cost="60"/>
-			<cap
-			name="tree"
-			cost="60"/>
-			<cap
-			name="tabpage"
-			cost="60"/>
-			<cap
-			name="combobox"
-			cost="60"/>
-			<cap
-			name="table"
-			cost="60"/>
-			<cap
-			name="scrollbar"
-			cost="60"/>
-			<cap
-			name="titlebar"
-			cost="60"/>
-			<cap
-			name="flexobject"
-			cost="80"/>
-			<cap
-			name="airwindow"
-			cost="80"/>
-			<cap
-			name="mobiledevice"
-			cost="80"/>
-			<cap
-			name="mobileapp"
-			cost="80"/>
-			<cap
-			name="mobilewebdocument"
-			cost="80"/>
-			<cap
-			name="excelworksheet"
-			cost="80"/>
-			<cap
-			name="sapwindow"
-			cost="80"/>
-			<cap
-			name="webdocument"
-			cost="80"/>
-			<cap
-			name="windowsapp"
-			cost="80"/>
-			<cap
-			name="formtag"
-			cost="60"/>
-			<cap
-			name="selecttag"
-			cost="60"/>
-			<cap
-			name="frametag"
-			cost="80"/>
-			<cap
-			name="iframetag"
-			cost="80"/>
-			<cap
-			name="oltag"
-			cost="60"/>
-			<cap
-			name="ultag"
-			cost="60"/>
-			<cap
-			name="tabletag"
-			cost="60"/>
-			<cap
-			name="sectiontag"
-			cost="60"/>
-			<cap
-			name="navtag"
-			cost="60"/>
-			<cap
-			name="maptag"
-			cost="50"/>
-			<cap
-			name="articletag"
-			cost="50"/>
-			<cap
-			name="menutag"
-			cost="50"/>
-			<cap
-			name="webelement"
-			cost="20"/>
-			<cap
-			name="abbrtag"
-			cost="20"/>
-			<cap
-			name="accessible"
-			cost="20"/>
-			<cap
-			name="accessibletreeitem"
-			cost="20"/>
-			<cap
-			name="acronymtag"
-			cost="20"/>
-			<cap
-			name="addresstag"
-			cost="20"/>
-			<cap
-			name="androidapp"
-			cost="20"/>
-			<cap
-			name="androidelement"
-			cost="20"/>
-			<cap
-			name="applettag"
-			cost="20"/>
-			<cap
-			name="areatag"
-			cost="20"/>
-			<cap
-			name="asidetag"
-			cost="20"/>
-			<cap
-			name="atag"
-			cost="20"/>
-			<cap
-			name="audiotag"
-			cost="20"/>
-			<cap
-			name="basefonttag"
-			cost="20"/>
-			<cap
-			name="basetag"
-			cost="20"/>
-			<cap
-			name="bdotag"
-			cost="20"/>
-			<cap
-			name="bigtag"
-			cost="20"/>
-			<cap
-			name="blockquotetag"
-			cost="20"/>
-			<cap
-			name="bodytag"
-			cost="20"/>
-			<cap
-			name="brtag"
-			cost="20"/>
-			<cap
-			name="btag"
-			cost="20"/>
-			<cap
-			name="buttontag"
-			cost="20"/>
-			<cap
-			name="canvastag"
-			cost="20"/>
-			<cap
-			name="captiontag"
-			cost="20"/>
-			<cap
-			name="cefwebdocument"
-			cost="20"/>
-			<cap
-			name="cefwebdocumentdebug"
-			cost="20"/>
-			<cap
-			name="cefwebelement"
-			cost="20"/>
-			<cap
-			name="centertag"
-			cost="20"/>
-			<cap
-			name="checkable"
-			cost="20"/>
-			<cap
-			name="checkbox"
-			cost="20"/>
-			<cap
-			name="citetag"
-			cost="20"/>
-			<cap
-			name="codetag"
-			cost="20"/>
-			<cap
-			name="colgrouptag"
-			cost="20"/>
-			<cap
-			name="coltag"
-			cost="20"/>
-			<cap
-			name="commandtag"
-			cost="20"/>
-			<cap
-			name="contextmenu"
-			cost="20"/>
-			<cap
-			name="control"
-			cost="20"/>
-			<cap
-			name="controlnet11"
-			cost="20"/>
-			<cap
-			name="datalisttag"
-			cost="20"/>
-			<cap
-			name="datetime"
-			cost="20"/>
-			<cap
-			name="ddtag"
-			cost="20"/>
-			<cap
-			name="delphicontrol"
-			cost="20"/>
-			<cap
-			name="deltag"
-			cost="20"/>
-			<cap
-			name="desktop"
-			cost="20"/>
-			<cap
-			name="detailstag"
-			cost="20"/>
-			<cap
-			name="dfntag"
-			cost="20"/>
-			<cap
-			name="dirtag"
-			cost="20"/>
-			<cap
-			name="divtag"
-			cost="20"/>
-			<cap
-			name="dltag"
-			cost="20"/>
-			<cap
-			name="dttag"
-			cost="20"/>
-			<cap
-			name="embedtag"
-			cost="20"/>
-			<cap
-			name="emtag"
-			cost="20"/>
-			<cap
-			name="excelapplication"
-			cost="20"/>
-			<cap
-			name="exceloleobject"
-			cost="20"/>
-			<cap
-			name="excelrange"
-			cost="20"/>
-			<cap
-			name="excelshape"
-			cost="20"/>
-			<cap
-			name="excelworkbook"
-			cost="20"/>
-			<cap
-			name="fieldsettag"
-			cost="20"/>
-			<cap
-			name="figcaptiontag"
-			cost="20"/>
-			<cap
-			name="figuretag"
-			cost="20"/>
-			<cap
-			name="flexdataitem"
-			cost="20"/>
-			<cap
-			name="flexelement"
-			cost="20"/>
-			<cap
-			name="fonttag"
-			cost="20"/>
-			<cap
-			name="footertag"
-			cost="20"/>
-			<cap
-			name="framesettag"
-			cost="20"/>
-			<cap
-			name="grip"
-			cost="20"/>
-			<cap
-			name="h1tag"
-			cost="20"/>
-			<cap
-			name="h2tag"
-			cost="20"/>
-			<cap
-			name="h3tag"
-			cost="20"/>
-			<cap
-			name="h4tag"
-			cost="20"/>
-			<cap
-			name="h5tag"
-			cost="20"/>
-			<cap
-			name="h6tag"
-			cost="20"/>
-			<cap
-			name="headertag"
-			cost="20"/>
-			<cap
-			name="headtag"
-			cost="20"/>
-			<cap
-			name="hgrouptag"
-			cost="20"/>
-			<cap
-			name="host"
-			cost="20"/>
-			<cap
-			name="hrtag"
-			cost="20"/>
-			<cap
-			name="ihtmltag"
-			cost="20"/>
-			<cap
-			name="imgtag"
-			cost="20"/>
-			<cap
-			name="indicator"
-			cost="20"/>
-			<cap
-			name="inputtag"
-			cost="20"/>
-			<cap
-			name="instag"
-			cost="20"/>
-			<cap
-			name="iosapp"
-			cost="20"/>
-			<cap
-			name="ioselement"
-			cost="20"/>
-			<cap
-			name="iospicker"
-			cost="20"/>
-			<cap
-			name="iosscrollview"
-			cost="20"/>
-			<cap
-			name="iostable"
-			cost="20"/>
-			<cap
-			name="isindextag"
-			cost="20"/>
-			<cap
-			name="itag"
-			cost="20"/>
-			<cap
-			name="javaapplet"
-			cost="20"/>
-			<cap
-			name="javaelement"
-			cost="20"/>
-			<cap
-			name="javaitem"
-			cost="20"/>
-			<cap
-			name="kbdtag"
-			cost="20"/>
-			<cap
-			name="keygentag"
-			cost="20"/>
-			<cap
-			name="labeltag"
-			cost="20"/>
-			<cap
-			name="legendtag"
-			cost="20"/>
-			<cap
-			name="link"
-			cost="20"/>
-			<cap
-			name="linktag"
-			cost="20"/>
-			<cap
-			name="litag"
-			cost="20"/>
-			<cap
-			name="marktag"
-			cost="20"/>
-			<cap
-			name="menubar"
-			cost="20"/>
-			<cap
-			name="menuitem"
-			cost="20"/>
-			<cap
-			name="metatag"
-			cost="20"/>
-			<cap
-			name="metertag"
-			cost="20"/>
-			<cap
-			name="mobileform"
-			cost="20"/>
-			<cap
-			name="mobileuielement"
-			cost="20"/>
-			<cap
-			name="nativeitem"
-			cost="20"/>
-			<cap
-			name="nativewindow"
-			cost="20"/>
-			<cap
-			name="noframestag"
-			cost="20"/>
-			<cap
-			name="noscripttag"
-			cost="20"/>
-			<cap
-			name="objecttag"
-			cost="20"/>
-			<cap
-			name="optgrouptag"
-			cost="20"/>
-			<cap
-			name="optiontag"
-			cost="20"/>
-			<cap
-			name="outputtag"
-			cost="20"/>
-			<cap
-			name="paramtag"
-			cost="20"/>
-			<cap
-			name="picture"
-			cost="20"/>
-			<cap
-			name="pretag"
-			cost="20"/>
-			<cap
-			name="progressbar"
-			cost="20"/>
-			<cap
-			name="progresstag"
-			cost="20"/>
-			<cap
-			name="ptag"
-			cost="20"/>
-			<cap
-			name="qtag"
-			cost="20"/>
-			<cap
-			name="qtelement"
-			cost="20"/>
-			<cap
-			name="qtitem"
-			cost="20"/>
-			<cap
-			name="qtwindow"
-			cost="20"/>
-			<cap
-			name="radiobutton"
-			cost="20"/>
-			<cap
-			name="rawimage"
-			cost="20"/>
-			<cap
-			name="rawtext"
-			cost="20"/>
-			<cap
-			name="rawtextblock"
-			cost="20"/>
-			<cap
-			name="rptag"
-			cost="20"/>
-			<cap
-			name="rttag"
-			cost="20"/>
-			<cap
-			name="rubytag"
-			cost="20"/>
-			<cap
-			name="samptag"
-			cost="20"/>
-			<cap
-			name="sapelement"
-			cost="20"/>
-			<cap
-			name="sapitem"
-			cost="20"/>
-			<cap
-			name="scripttag"
-			cost="20"/>
-			<cap
-			name="separator"
-			cost="20"/>
-			<cap
-			name="slider"
-			cost="20"/>
-			<cap
-			name="smalltag"
-			cost="20"/>
-			<cap
-			name="sourcetag"
-			cost="20"/>
-			<cap
-			name="spantag"
-			cost="20"/>
-			<cap
-			name="stag"
-			cost="20"/>
-			<cap
-			name="statusbar"
-			cost="20"/>
-			<cap
-			name="striketag"
-			cost="20"/>
-			<cap
-			name="strongtag"
-			cost="20"/>
-			<cap
-			name="styletag"
-			cost="20"/>
-			<cap
-			name="subtag"
-			cost="20"/>
-			<cap
-			name="summarytag"
-			cost="20"/>
-			<cap
-			name="suptag"
-			cost="20"/>
-			<cap
-			name="tabpagelist"
-			cost="20"/>
-			<cap
-			name="tbodytag"
-			cost="20"/>
-			<cap
-			name="tdtag"
-			cost="20"/>
-			<cap
-			name="textareatag"
-			cost="20"/>
-			<cap
-			name="tfoottag"
-			cost="20"/>
-			<cap
-			name="theadtag"
-			cost="20"/>
-			<cap
-			name="thtag"
-			cost="20"/>
-			<cap
-			name="timetag"
-			cost="20"/>
-			<cap
-			name="titletag"
-			cost="20"/>
-			<cap
-			name="togglebutton"
-			cost="20"/>
-			<cap
-			name="tooltip"
-			cost="20"/>
-			<cap
-			name="trtag"
-			cost="20"/>
-			<cap
-			name="tttag"
-			cost="20"/>
-			<cap
-			name="uiautomation"
-			cost="20"/>
-			<cap
-			name="uiautomationinvoke"
-			cost="20"/>
-			<cap
-			name="uiautomationrangevalue"
-			cost="20"/>
-			<cap
-			name="uiautomationtoggle"
-			cost="20"/>
-			<cap
-			name="uiautomationvalue"
-			cost="20"/>
-			<cap
-			name="uiautomationvirtualizeditem"
-			cost="20"/>
-			<cap
-			name="utag"
-			cost="20"/>
-			<cap
-			name="vartag"
-			cost="20"/>
-			<cap
-			name="videotag"
-			cost="20"/>
-			<cap
-			name="wbrtag"
-			cost="20"/>
-			<cap
-			name="webdriver"
-			cost="20"/>
-			<cap
-			name="wordapplication"
-			cost="20"/>
-			<cap
-			name="worddocument"
-			cost="20"/>
-			<cap
-			name="wpfdebug"
-			cost="20"/>
-			<cap
-			name="wpfelement"
-			cost="20"/>
-			<cap
-			name="wpfwin32element"
-			cost="20"/>
+		q="0.5">
+			<cap
+			cost="10"
+			name="unknown">
+			</cap>
+			<cap
+			cost="20"
+			name="container">
+			</cap>
+			<cap
+			cost="10"
+			name="cell">
+			</cap>
+			<cap
+			cost="10"
+			name="text">
+			</cap>
+			<cap
+			cost="20"
+			name="treeitem">
+			</cap>
+			<cap
+			cost="40"
+			name="listitem">
+			</cap>
+			<cap
+			cost="40"
+			name="row">
+			</cap>
+			<cap
+			cost="40"
+			name="column">
+			</cap>
+			<cap
+			cost="40"
+			name="button">
+			</cap>
+			<cap
+			cost="60"
+			name="form">
+			</cap>
+			<cap
+			cost="60"
+			name="toolbar">
+			</cap>
+			<cap
+			cost="60"
+			name="list">
+			</cap>
+			<cap
+			cost="60"
+			name="tree">
+			</cap>
+			<cap
+			cost="60"
+			name="tabpage">
+			</cap>
+			<cap
+			cost="60"
+			name="combobox">
+			</cap>
+			<cap
+			cost="60"
+			name="table">
+			</cap>
+			<cap
+			cost="60"
+			name="scrollbar">
+			</cap>
+			<cap
+			cost="60"
+			name="titlebar">
+			</cap>
+			<cap
+			cost="80"
+			name="flexobject">
+			</cap>
+			<cap
+			cost="80"
+			name="airwindow">
+			</cap>
+			<cap
+			cost="80"
+			name="mobiledevice">
+			</cap>
+			<cap
+			cost="80"
+			name="mobileapp">
+			</cap>
+			<cap
+			cost="80"
+			name="mobilewebdocument">
+			</cap>
+			<cap
+			cost="80"
+			name="excelworksheet">
+			</cap>
+			<cap
+			cost="80"
+			name="sapwindow">
+			</cap>
+			<cap
+			cost="80"
+			name="webdocument">
+			</cap>
+			<cap
+			cost="80"
+			name="windowsapp">
+			</cap>
+			<cap
+			cost="60"
+			name="formtag">
+			</cap>
+			<cap
+			cost="60"
+			name="selecttag">
+			</cap>
+			<cap
+			cost="80"
+			name="frametag">
+			</cap>
+			<cap
+			cost="80"
+			name="iframetag">
+			</cap>
+			<cap
+			cost="60"
+			name="oltag">
+			</cap>
+			<cap
+			cost="60"
+			name="ultag">
+			</cap>
+			<cap
+			cost="60"
+			name="tabletag">
+			</cap>
+			<cap
+			cost="60"
+			name="sectiontag">
+			</cap>
+			<cap
+			cost="60"
+			name="navtag">
+			</cap>
+			<cap
+			cost="50"
+			name="maptag">
+			</cap>
+			<cap
+			cost="50"
+			name="articletag">
+			</cap>
+			<cap
+			cost="50"
+			name="menutag">
+			</cap>
+			<cap
+			cost="20"
+			name="webelement">
+			</cap>
+			<cap
+			cost="20"
+			name="abbrtag">
+			</cap>
+			<cap
+			cost="20"
+			name="accessible">
+			</cap>
+			<cap
+			cost="20"
+			name="accessibletreeitem">
+			</cap>
+			<cap
+			cost="20"
+			name="acronymtag">
+			</cap>
+			<cap
+			cost="20"
+			name="addresstag">
+			</cap>
+			<cap
+			cost="20"
+			name="androidapp">
+			</cap>
+			<cap
+			cost="20"
+			name="androidelement">
+			</cap>
+			<cap
+			cost="20"
+			name="applettag">
+			</cap>
+			<cap
+			cost="20"
+			name="areatag">
+			</cap>
+			<cap
+			cost="20"
+			name="asidetag">
+			</cap>
+			<cap
+			cost="20"
+			name="atag">
+			</cap>
+			<cap
+			cost="20"
+			name="audiotag">
+			</cap>
+			<cap
+			cost="20"
+			name="basefonttag">
+			</cap>
+			<cap
+			cost="20"
+			name="basetag">
+			</cap>
+			<cap
+			cost="20"
+			name="bdotag">
+			</cap>
+			<cap
+			cost="20"
+			name="bigtag">
+			</cap>
+			<cap
+			cost="20"
+			name="blockquotetag">
+			</cap>
+			<cap
+			cost="20"
+			name="bodytag">
+			</cap>
+			<cap
+			cost="20"
+			name="brtag">
+			</cap>
+			<cap
+			cost="20"
+			name="btag">
+			</cap>
+			<cap
+			cost="20"
+			name="buttontag">
+			</cap>
+			<cap
+			cost="20"
+			name="canvastag">
+			</cap>
+			<cap
+			cost="20"
+			name="captiontag">
+			</cap>
+			<cap
+			cost="20"
+			name="cefwebdocument">
+			</cap>
+			<cap
+			cost="20"
+			name="cefwebdocumentdebug">
+			</cap>
+			<cap
+			cost="20"
+			name="cefwebelement">
+			</cap>
+			<cap
+			cost="20"
+			name="centertag">
+			</cap>
+			<cap
+			cost="20"
+			name="checkable">
+			</cap>
+			<cap
+			cost="20"
+			name="checkbox">
+			</cap>
+			<cap
+			cost="20"
+			name="citetag">
+			</cap>
+			<cap
+			cost="20"
+			name="codetag">
+			</cap>
+			<cap
+			cost="20"
+			name="colgrouptag">
+			</cap>
+			<cap
+			cost="20"
+			name="coltag">
+			</cap>
+			<cap
+			cost="20"
+			name="commandtag">
+			</cap>
+			<cap
+			cost="20"
+			name="contextmenu">
+			</cap>
+			<cap
+			cost="20"
+			name="control">
+			</cap>
+			<cap
+			cost="20"
+			name="controlnet11">
+			</cap>
+			<cap
+			cost="20"
+			name="datalisttag">
+			</cap>
+			<cap
+			cost="20"
+			name="datetime">
+			</cap>
+			<cap
+			cost="20"
+			name="ddtag">
+			</cap>
+			<cap
+			cost="20"
+			name="delphicontrol">
+			</cap>
+			<cap
+			cost="20"
+			name="deltag">
+			</cap>
+			<cap
+			cost="20"
+			name="desktop">
+			</cap>
+			<cap
+			cost="20"
+			name="detailstag">
+			</cap>
+			<cap
+			cost="20"
+			name="dfntag">
+			</cap>
+			<cap
+			cost="20"
+			name="dirtag">
+			</cap>
+			<cap
+			cost="20"
+			name="divtag">
+			</cap>
+			<cap
+			cost="20"
+			name="dltag">
+			</cap>
+			<cap
+			cost="20"
+			name="dttag">
+			</cap>
+			<cap
+			cost="20"
+			name="embedtag">
+			</cap>
+			<cap
+			cost="20"
+			name="emtag">
+			</cap>
+			<cap
+			cost="20"
+			name="excelapplication">
+			</cap>
+			<cap
+			cost="20"
+			name="exceloleobject">
+			</cap>
+			<cap
+			cost="20"
+			name="excelrange">
+			</cap>
+			<cap
+			cost="20"
+			name="excelshape">
+			</cap>
+			<cap
+			cost="20"
+			name="excelworkbook">
+			</cap>
+			<cap
+			cost="20"
+			name="fieldsettag">
+			</cap>
+			<cap
+			cost="20"
+			name="figcaptiontag">
+			</cap>
+			<cap
+			cost="20"
+			name="figuretag">
+			</cap>
+			<cap
+			cost="20"
+			name="flexdataitem">
+			</cap>
+			<cap
+			cost="20"
+			name="flexelement">
+			</cap>
+			<cap
+			cost="20"
+			name="fonttag">
+			</cap>
+			<cap
+			cost="20"
+			name="footertag">
+			</cap>
+			<cap
+			cost="20"
+			name="framesettag">
+			</cap>
+			<cap
+			cost="20"
+			name="grip">
+			</cap>
+			<cap
+			cost="20"
+			name="h1tag">
+			</cap>
+			<cap
+			cost="20"
+			name="h2tag">
+			</cap>
+			<cap
+			cost="20"
+			name="h3tag">
+			</cap>
+			<cap
+			cost="20"
+			name="h4tag">
+			</cap>
+			<cap
+			cost="20"
+			name="h5tag">
+			</cap>
+			<cap
+			cost="20"
+			name="h6tag">
+			</cap>
+			<cap
+			cost="20"
+			name="headertag">
+			</cap>
+			<cap
+			cost="20"
+			name="headtag">
+			</cap>
+			<cap
+			cost="20"
+			name="hgrouptag">
+			</cap>
+			<cap
+			cost="20"
+			name="host">
+			</cap>
+			<cap
+			cost="20"
+			name="hrtag">
+			</cap>
+			<cap
+			cost="20"
+			name="ihtmltag">
+			</cap>
+			<cap
+			cost="20"
+			name="imgtag">
+			</cap>
+			<cap
+			cost="20"
+			name="indicator">
+			</cap>
+			<cap
+			cost="20"
+			name="inputtag">
+			</cap>
+			<cap
+			cost="20"
+			name="instag">
+			</cap>
+			<cap
+			cost="20"
+			name="iosapp">
+			</cap>
+			<cap
+			cost="20"
+			name="ioselement">
+			</cap>
+			<cap
+			cost="20"
+			name="iospicker">
+			</cap>
+			<cap
+			cost="20"
+			name="iosscrollview">
+			</cap>
+			<cap
+			cost="20"
+			name="iostable">
+			</cap>
+			<cap
+			cost="20"
+			name="isindextag">
+			</cap>
+			<cap
+			cost="20"
+			name="itag">
+			</cap>
+			<cap
+			cost="20"
+			name="javaapplet">
+			</cap>
+			<cap
+			cost="20"
+			name="javaelement">
+			</cap>
+			<cap
+			cost="20"
+			name="javaitem">
+			</cap>
+			<cap
+			cost="20"
+			name="kbdtag">
+			</cap>
+			<cap
+			cost="20"
+			name="keygentag">
+			</cap>
+			<cap
+			cost="20"
+			name="labeltag">
+			</cap>
+			<cap
+			cost="20"
+			name="legendtag">
+			</cap>
+			<cap
+			cost="20"
+			name="link">
+			</cap>
+			<cap
+			cost="20"
+			name="linktag">
+			</cap>
+			<cap
+			cost="20"
+			name="litag">
+			</cap>
+			<cap
+			cost="20"
+			name="marktag">
+			</cap>
+			<cap
+			cost="20"
+			name="menubar">
+			</cap>
+			<cap
+			cost="20"
+			name="menuitem">
+			</cap>
+			<cap
+			cost="20"
+			name="metatag">
+			</cap>
+			<cap
+			cost="20"
+			name="metertag">
+			</cap>
+			<cap
+			cost="20"
+			name="mobileform">
+			</cap>
+			<cap
+			cost="20"
+			name="mobileuielement">
+			</cap>
+			<cap
+			cost="20"
+			name="nativeitem">
+			</cap>
+			<cap
+			cost="20"
+			name="nativewindow">
+			</cap>
+			<cap
+			cost="20"
+			name="noframestag">
+			</cap>
+			<cap
+			cost="20"
+			name="noscripttag">
+			</cap>
+			<cap
+			cost="20"
+			name="objecttag">
+			</cap>
+			<cap
+			cost="20"
+			name="optgrouptag">
+			</cap>
+			<cap
+			cost="20"
+			name="optiontag">
+			</cap>
+			<cap
+			cost="20"
+			name="outputtag">
+			</cap>
+			<cap
+			cost="20"
+			name="paramtag">
+			</cap>
+			<cap
+			cost="20"
+			name="picture">
+			</cap>
+			<cap
+			cost="20"
+			name="pretag">
+			</cap>
+			<cap
+			cost="20"
+			name="progressbar">
+			</cap>
+			<cap
+			cost="20"
+			name="progresstag">
+			</cap>
+			<cap
+			cost="20"
+			name="ptag">
+			</cap>
+			<cap
+			cost="20"
+			name="qtag">
+			</cap>
+			<cap
+			cost="20"
+			name="qtelement">
+			</cap>
+			<cap
+			cost="20"
+			name="qtitem">
+			</cap>
+			<cap
+			cost="20"
+			name="qtwindow">
+			</cap>
+			<cap
+			cost="20"
+			name="radiobutton">
+			</cap>
+			<cap
+			cost="20"
+			name="rawimage">
+			</cap>
+			<cap
+			cost="20"
+			name="rawtext">
+			</cap>
+			<cap
+			cost="20"
+			name="rawtextblock">
+			</cap>
+			<cap
+			cost="20"
+			name="rptag">
+			</cap>
+			<cap
+			cost="20"
+			name="rttag">
+			</cap>
+			<cap
+			cost="20"
+			name="rubytag">
+			</cap>
+			<cap
+			cost="20"
+			name="samptag">
+			</cap>
+			<cap
+			cost="20"
+			name="sapelement">
+			</cap>
+			<cap
+			cost="20"
+			name="sapitem">
+			</cap>
+			<cap
+			cost="20"
+			name="scripttag">
+			</cap>
+			<cap
+			cost="20"
+			name="separator">
+			</cap>
+			<cap
+			cost="20"
+			name="slider">
+			</cap>
+			<cap
+			cost="20"
+			name="smalltag">
+			</cap>
+			<cap
+			cost="20"
+			name="sourcetag">
+			</cap>
+			<cap
+			cost="20"
+			name="spantag">
+			</cap>
+			<cap
+			cost="20"
+			name="stag">
+			</cap>
+			<cap
+			cost="20"
+			name="statusbar">
+			</cap>
+			<cap
+			cost="20"
+			name="striketag">
+			</cap>
+			<cap
+			cost="20"
+			name="strongtag">
+			</cap>
+			<cap
+			cost="20"
+			name="styletag">
+			</cap>
+			<cap
+			cost="20"
+			name="subtag">
+			</cap>
+			<cap
+			cost="20"
+			name="summarytag">
+			</cap>
+			<cap
+			cost="20"
+			name="suptag">
+			</cap>
+			<cap
+			cost="20"
+			name="tabpagelist">
+			</cap>
+			<cap
+			cost="20"
+			name="tbodytag">
+			</cap>
+			<cap
+			cost="20"
+			name="tdtag">
+			</cap>
+			<cap
+			cost="20"
+			name="textareatag">
+			</cap>
+			<cap
+			cost="20"
+			name="tfoottag">
+			</cap>
+			<cap
+			cost="20"
+			name="theadtag">
+			</cap>
+			<cap
+			cost="20"
+			name="thtag">
+			</cap>
+			<cap
+			cost="20"
+			name="timetag">
+			</cap>
+			<cap
+			cost="20"
+			name="titletag">
+			</cap>
+			<cap
+			cost="20"
+			name="togglebutton">
+			</cap>
+			<cap
+			cost="20"
+			name="tooltip">
+			</cap>
+			<cap
+			cost="20"
+			name="trtag">
+			</cap>
+			<cap
+			cost="20"
+			name="tttag">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomation">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomationinvoke">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomationrangevalue">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomationtoggle">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomationvalue">
+			</cap>
+			<cap
+			cost="20"
+			name="uiautomationvirtualizeditem">
+			</cap>
+			<cap
+			cost="20"
+			name="utag">
+			</cap>
+			<cap
+			cost="20"
+			name="vartag">
+			</cap>
+			<cap
+			cost="20"
+			name="videotag">
+			</cap>
+			<cap
+			cost="20"
+			name="wbrtag">
+			</cap>
+			<cap
+			cost="20"
+			name="webdriver">
+			</cap>
+			<cap
+			cost="20"
+			name="wordapplication">
+			</cap>
+			<cap
+			cost="20"
+			name="worddocument">
+			</cap>
+			<cap
+			cost="20"
+			name="wpfdebug">
+			</cap>
+			<cap
+			cost="20"
+			name="wpfelement">
+			</cap>
+			<cap
+			cost="20"
+			name="wpfwin32element">
+			</cap>
 		</pathbuildoptions>
 	</rxpath.pathbuildoptions>
 	<spy.CompleteAncestorSnapshot>
@@ -1149,112 +1407,167 @@ rxversion="6.2">
 	<plugins.rawtext.whitelist>
 		<rawtextconfig>
 			<include
-			type="process"
-			name="^Ranorex_project$"/>
+			name="^Ranorex_project$"
+			type="process">
+			</include>
 			<include
-			type="process"
-			name="^Ranorex_project$"/>
+			name="^Ranorex_project$"
+			type="process">
+			</include>
 			<include
-			type="process"
-			name="^Delphi$"/>
+			name="^Delphi$"
+			type="process">
+			</include>
 			<include
-			type="process"
-			name="^Ranorex_project$"/>
+			name="^Ranorex_project$"
+			type="process">
+			</include>
 			<include
-			type="process"
-			name="^Ranorex_project$"/>
+			name="^Ranorex_project$"
+			type="process">
+			</include>
 			<include
-			type="process"
-			name="^Delphi$"/>
+			name="^Delphi$"
+			type="process">
+			</include>
 			<include
-			type="class"
-			name="^OPWindowClass$"/>
+			name="^OPWindowClass$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TStringGrid$"/>
+			name="^TStringGrid$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TMonthCalendar$"/>
+			name="^TMonthCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^SAPTreeList$"/>
+			name="^SAPTreeList$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TcxGridSite$"/>
+			name="^TcxGridSite$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TTabSheet$"/>
+			name="^TTabSheet$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TCalendar$"/>
+			name="^TCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^OPWindowClass$"/>
+			name="^OPWindowClass$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TStringGrid$"/>
+			name="^TStringGrid$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TMonthCalendar$"/>
+			name="^TMonthCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^SAPTreeList$"/>
+			name="^SAPTreeList$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TcxGridSite$"/>
+			name="^TcxGridSite$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TTabSheet$"/>
+			name="^TTabSheet$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TCalendar$"/>
+			name="^TCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^OPWindowClass$"/>
+			name="^OPWindowClass$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TStringGrid$"/>
+			name="^TStringGrid$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TMonthCalendar$"/>
+			name="^TMonthCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^SAPTreeList$"/>
+			name="^SAPTreeList$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TcxGridSite$"/>
+			name="^TcxGridSite$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TTabSheet$"/>
+			name="^TTabSheet$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TCalendar$"/>
+			name="^TCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^OPWindowClass$"/>
+			name="^OPWindowClass$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TStringGrid$"/>
+			name="^TStringGrid$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TMonthCalendar$"/>
+			name="^TMonthCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^SAPTreeList$"/>
+			name="^SAPTreeList$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TcxGridSite$"/>
+			name="^TcxGridSite$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TTabSheet$"/>
+			name="^TTabSheet$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TCalendar$"/>
+			name="^TCalendar$"
+			type="class">
+			</include>
 			<include
-			type="class"
-			name="^TPPDBGrid$"/>
+			name="^TPPDBGrid$"
+			type="class">
+			</include>
 		</rawtextconfig>
 	</plugins.rawtext.whitelist>
+	<Telemetry.Enabled>
+		False
+	</Telemetry.Enabled>
+	<Endpoints.Data>
+	</Endpoints.Data>
+	<TestCase.Retry.Count>
+		0
+	</TestCase.Retry.Count>
+	<TestCase.Retry.IncludeSmartFolder>
+		True
+	</TestCase.Retry.IncludeSmartFolder>
+	<TestCase.Retry.IncludeTestCase>
+		True
+	</TestCase.Retry.IncludeTestCase>
+	<TestCase.Retry.ShowWarning>
+		True
+	</TestCase.Retry.ShowWarning>
+	<TestExecution.CopyRuntimeToOutput>
+		False
+	</TestExecution.CopyRuntimeToOutput>
 	<plugins.win32.EnableBasicDelphiSupport>
 		True
 	</plugins.win32.EnableBasicDelphiSupport>
@@ -1266,6 +1579,8 @@ rxversion="6.2">
 	</plugins.win32.EnableDynamicMsaa>
 	<plugins.win32.ProcessWhitelist>
 	</plugins.win32.ProcessWhitelist>
+	<plugins.win32.ProcessBlacklist>
+	</plugins.win32.ProcessBlacklist>
 	<plugins.msaa.FilterEnabled>
 		True
 	</plugins.msaa.FilterEnabled>
@@ -1288,17 +1603,20 @@ rxversion="6.2">
 		True
 	</plugins.wpfnative.enablewpfdebug>
 	<plugins.wpfnative.applicationtrees>
-		WpfOnly
+		WpfImprovedOnly
 	</plugins.wpfnative.applicationtrees>
 	<plugins.wpfnative.proc.ignorelist>
 	</plugins.wpfnative.proc.ignorelist>
+	<plugins.wpfnative.tree.WpfImprovedAlreadyForcedAsDefault>
+		True
+	</plugins.wpfnative.tree.WpfImprovedAlreadyForcedAsDefault>
 	<plugins.wpfnative.item.filter.attributes.prefixlist>
 		AreAnyTouches;IsKeyboard;IsMouse;IsStylus;IsFocused;IsVisible;IsEnabled;Ranorex;
 	</plugins.wpfnative.item.filter.attributes.prefixlist>
 	<plugins.wpfnative.attributes.allow>
 	</plugins.wpfnative.attributes.allow>
 	<plugins.wpfnative.tree.showall>
-		True
+		False
 	</plugins.wpfnative.tree.showall>
 	<plugins.wpfnative.tree.realizedvirtualizeditems>
 		False
@@ -1318,6 +1636,8 @@ rxversion="6.2">
 	<plugins.wpfnative.tree.skipanddescend>
 		System.Windows.Controls.Primitives.CalendarItem;System.Windows.Controls.Grid|System.Windows.Controls.Primitives.CalendarItem|System.Windows.Controls.Calendar;System.Windows.Controls.Grid|System.Windows.Controls.Border|System.Windows.Controls.Calendar;System.Windows.Controls.Primitives.DataGridCellsPresenter;System.Windows.Controls.Grid|System.Windows.Controls.ScrollViewer|System.Windows.Controls.DataGrid;System.Windows.Controls.Primitives.SelectiveScrollingGrid|System.Windows.Controls.Border|System.Windows.Controls.DataGridRow;System.Windows.Controls.DataGridCellsPanel|System.Windows.Controls.ItemsPresenter|System.Windows.Controls.DataGridRow;System.Windows.Controls.DataGridCellsPanel|System.Windows.Controls.ItemsPresenter|System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter;System.Windows.Controls.Grid|System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter|System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter;System.Windows.Controls.Grid|System.Windows.Controls.Primitives.DataGridColumnHeader|System.Windows.Controls.Primitives.DataGridColumnHeader;System.Windows.Controls.DockPanel|System.Windows.Controls.FlowDocumentReader|System.Windows.Controls.FlowDocumentReader;System.Windows.Controls.Grid|System.Windows.Controls.DockPanel|System.Windows.Controls.FlowDocumentReader;System.Windows.Controls.Decorator;System.Windows.Controls.ContentPresenter;System.Windows.Documents.AdornerLayer;System.Windows.Shapes.Shape|System.Windows.Controls.Primitives.ButtonBase;System.Windows.Controls.Grid|System.Windows.Controls.Button|System.Windows.Controls.Button;System.Windows.Controls.Grid|System.Windows.Controls.Grid|System.Windows.Controls.Button;System.Windows.Shapes.Shape|System.Windows.Controls.Grid|System.Windows.Controls.Button;System.Windows.Controls.Grid|System.Windows.Controls.Primitives.ToggleButton|System.Windows.Controls.Primitives.ToggleButton;System.Windows.Controls.Grid|System.Windows.Controls.ScrollViewer|System.Windows.Controls.Primitives.TextBoxBase;System.Windows.Controls.Grid|System.Windows.Controls.Border|System.Windows.Controls.Slider;System.Windows.Controls.Primitives.Track|System.Windows.Controls.Grid|System.Windows.Controls.Slider;System.Windows.Shapes.Path|System.Windows.Controls.Grid|System.Windows.Controls.Primitives.Thumb;System.Windows.Shapes.Rectangle|System.Windows.Controls.Primitives.Thumb|System.Windows.Controls.Primitives.Thumb;System.Windows.Controls.Grid|System.Windows.Controls.Border|System.Windows.Controls.DatePicker;System.Windows.Controls.ScrollViewer;System.Windows.Controls.ItemsPresenter;System.Windows.Controls.StackPanel||System.Windows.Controls.TreeView;System.Windows.Controls.Grid||System.Windows.Controls.TreeView;System.Windows.Controls.StackPanel|System.Windows.Controls.Grid|System.Windows.Controls.TreeView;System.Windows.Shapes.Rectangle||System.Windows.Controls.TreeView;System.Windows.Controls.Grid|System.Windows.Controls.TreeViewItem;System.Windows.Controls.Grid|System.Windows.Controls.ScrollViewer|System.Windows.Controls.ListBox;System.Windows.Controls.Grid|System.Windows.Controls.ToolBar|System.Windows.Controls.ToolBar;System.Windows.Controls.DockPanel|System.Windows.Controls.Border|System.Windows.Controls.ToolBar;System.Windows.Controls.Grid|System.Windows.Controls.GroupBox|System.Windows.Controls.GroupBox;System.Windows.Controls.Grid||System.Windows.Controls.Primitives.PopupRoot;System.Windows.Controls.StackPanel||System.Windows.Controls.Primitives.PopupRoot;System.Windows.Controls.VirtualizingStackPanel||System.Windows.Controls.Primitives.PopupRoot;System.Windows.Controls.Grid|System.Windows.Controls.Border|System.Windows.Controls.MenuItem;System.Windows.Controls.ContextMenu|System.Windows.Documents.NonLogicalAdornerDecorator|System.Windows.Controls.Primitives.PopupRoot;System.Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel||System.Windows.Controls.Primitives.PopupRoot;|System.Windows.Controls.Primitives.ScrollBar;System.Windows.Controls.Grid|SpreadsheetGear.Windows.Controls.ColumnHeader;System.Windows.Controls.Grid|SpreadsheetGear.Windows.Controls.RowHeader;System.Windows.Controls.TextBlock|System.Windows.Controls.ContentPresenter|System.Windows.Controls.TabItem;System.Windows.Controls.Grid|System.Windows.Controls.TabItem|System.Windows.Controls.TabItem;System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.RibbonTextBox|System.Windows.Controls.Ribbon.RibbonTextBox;System.Windows.Controls.Grid|System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.RibbonTextBox;System.Windows.Controls.Grid|System.Windows.Controls.ScrollViewer|System.Windows.Controls.Ribbon.RibbonTextBox;System.Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel|System.Windows.Controls.ItemsPresenter|System.Windows.Controls.Ribbon.RibbonTabHeaderItemsControl;System.Windows.Controls.Grid|System.Windows.Controls.ScrollViewer|System.Windows.Controls.Ribbon.RibbonTabHeaderItemsControl;System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.Ribbon|System.Windows.Controls.Ribbon.Ribbon;System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel||System.Windows.Controls.Ribbon.Ribbon;System.Windows.Controls.ContentControl|System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.Ribbon;System.Windows.Controls.DockPanel|System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.Ribbon;System.Windows.Controls.StackPanel|System.Windows.Controls.Border|System.Windows.Controls.Ribbon.RibbonButton;System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.RibbonTwoLineText|System.Windows.Controls.Ribbon.RibbonTwoLineText;System.Windows.Controls.DockPanel|System.Windows.Controls.Grid|System.Windows.Controls.Ribbon.RibbonTwoLineText;System.Windows.Controls.Grid|Xceed.Wpf.DataGrid.DataGridControl|Xceed.Wpf.DataGrid.DataGridControl;Xceed.Wpf.DataGrid.Views.TableflowViewItemsHost|System.Windows.Controls.Grid|Xceed.Wpf.DataGrid.DataGridControl;System.Windows.Controls.VirtualizingStackPanel;
 	</plugins.wpfnative.tree.skipanddescend>
+	<plugins.wpfnative.flags>
+	</plugins.wpfnative.flags>
 	<plugins.wpf.ExpensiveAttributesEnabled>
 		True
 	</plugins.wpf.ExpensiveAttributesEnabled>
@@ -1391,6 +1711,27 @@ rxversion="6.2">
 	<plugin.cef.enabledebugcapability>
 		False
 	</plugin.cef.enabledebugcapability>
+	<plugin.webdriver.commandtimeout>
+		10000ms
+	</plugin.webdriver.commandtimeout>
+	<plugin.webdriver.domfetchmode>
+		WhenChanged
+	</plugin.webdriver.domfetchmode>
+	<plugin.webdriver.tabautomation>
+		False
+	</plugin.webdriver.tabautomation>
+	<plugin.webdriver.attachToOpenSessions>
+		True
+	</plugin.webdriver.attachToOpenSessions>
+	<plugin.webdriver.domUpdateInterval>
+		1000ms
+	</plugin.webdriver.domUpdateInterval>
+	<plugin.webdriver.screenshotUpdateInterval>
+		3000ms
+	</plugin.webdriver.screenshotUpdateInterval>
+	<plugin.webdriver.screenshotUpdate>
+		False
+	</plugin.webdriver.screenshotUpdate>
 	<plugin.mobile.ios.provisionpath>
 		C:\Users\hhafner\RX Stuff\iOs Certs\TeamProfile.mobileprovision
 	</plugin.mobile.ios.provisionpath>

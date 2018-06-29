@@ -22,7 +22,7 @@ namespace GitTest
     /// <summary>
     /// The class representing the GitTestRepository element repository.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("Ranorex", "6.2")]
+    [System.CodeDom.Compiler.GeneratedCode("Ranorex", "8.2")]
     [RepositoryFolder("edb3c178-a9d1-4317-8118-d8eac76ed077")]
     public partial class GitTestRepository : RepoGenBaseFolder
     {
@@ -65,7 +65,7 @@ namespace GitTest
     /// <summary>
     /// Inner folder classes.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("Ranorex", "6.2")]
+    [System.CodeDom.Compiler.GeneratedCode("Ranorex", "8.2")]
     public partial class GitTestRepositoryFolders
     {
     }

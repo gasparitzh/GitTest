@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <repository
-name="GitTestRepository"
 id="5195b368-8f54-4bb1-87d7-ff983ee59da2"
-rxversion="6.2">
-  <codegen
-  classname="GitTestRepository"
-  namespace="GitTest"/>
-  <rootfolder
-  name="Root"
-  id="edb3c178-a9d1-4317-8118-d8eac76ed077"
-  searchtimeout="30000ms"
-  capname="unknown"
-  isrooted="True"
-  usecache="True">
-    <basepath/>
-  </rootfolder>
-  <variables/>
+name="GitTestRepository"
+rxversion="8.2">
+	<codegen
+	classname="GitTestRepository"
+	namespace="GitTest">
+	</codegen>
+	<rootfolder
+	capname="unknown"
+	id="edb3c178-a9d1-4317-8118-d8eac76ed077"
+	isrooted="True"
+	name="Root"
+	searchtimeout="30000ms"
+	usecache="True">
+		<basepath>
+		</basepath>
+	</rootfolder>
+	<variables>
+	</variables>
 </repository>

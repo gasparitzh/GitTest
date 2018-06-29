@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# Ranorex Studio 6.2
+# Ranorex Studio 8.2
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTest", "GitTest\GitTest.csproj", "{C38CD9DE-8317-4180-933B-B6159FCFC308}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40ABECBD-051E-40EC-8D44-D55C8BB2C376}"
